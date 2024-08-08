@@ -1,16 +1,42 @@
 .polling-container {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .candidates-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
   }
   
   .candidate {
     margin: 10px;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .candidate img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .candidate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .candidate img:hover {
+    transform: scale(1.1);
   }
   
   .chart-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    flex: 2;
+    margin-left: 20px;
   }
   
