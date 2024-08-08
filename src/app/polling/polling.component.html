@@ -1,0 +1,27 @@
+<div class="polling-container">
+    <div class="candidate" *ngFor="let candidate of candidates">
+      <mat-card>
+        <img mat-card-image [src]="candidate.photo" alt="{{ candidate.name }}">
+        <mat-card-content>
+          <h2>{{ candidate.name }}</h2>
+          <p>Votes: {{ candidate.votes }}</p>
+          <button mat-raised-button color="primary" (click)="vote(candidate)">Vote</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="chart-container">
+      <ngx-charts-bar-vertical
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="voteResults"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Candidates'"
+        [yAxisLabel]="'Votes'">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+  
